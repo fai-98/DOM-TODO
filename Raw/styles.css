@@ -1,0 +1,53 @@
+body {
+  margin: 0px;
+  background-color: #90e0ef;
+}
+li {
+  list-style: none;
+}
+.input-container {
+  height: 15vh;
+  margin: 0 auto;
+}
+.main-container {
+  font-family: "Montserrat", sans-serif;
+  color: azure;
+  text-align: center;
+  padding-top: 2rem;
+}
+.task-list {
+  padding-left: 0;
+}
+.action {
+  box-sizing: border-box;
+  font-size: 1.5rem;
+  background-color: #023e8a;
+  width: 60%;
+  margin: 0 auto;
+  font-family: "Ubuntu", sans-serif;
+  padding: 1rem 1rem;
+  margin-bottom: 1.5rem;
+}
+.task {
+  height: 2rem;
+  width: 60%;
+  background-color: #0077b6;
+  margin: 0 auto;
+  margin-bottom: 0.5rem;
+  padding: auto;
+}
+.input-box {
+  display: block;
+  margin: 0 auto;
+  height: 60%;
+  width: 50%;
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+/* media queries -> screen size , responsivenes */
+@media screen and (min-width: 800px) {
+  .input-box {
+    width: 60%;
+  }
+}
