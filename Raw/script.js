@@ -1,5 +1,18 @@
 let inputBox = document.querySelector(".input-box"); //gets input box element
 let taskList = document.querySelector(".task-list"); //gets the task list element using class
+let taskArr = []; //for local storage
+
+if(localStorage.getItem("allTasks")){
+  let strArr = localStorage.getItem("allTasks");
+  taskArr = JSON.parse(strArr); //str to arr 
+  for(let i=0; i<taskArr.length ; i++){
+    let task = taskArr[i];
+    let taskElem = document.createElement("li");
+    taskElem.setAttribute("class", "task");
+    taskElem.innerText = task;
+    taskList.appendChild(taskElem);
+  }
+}
 
 //CRUD Create-create elem , Read - querySelector , Update- append child , Delete- remove()
 console.log("before");
@@ -18,6 +31,9 @@ inputBox.addEventListener("keypress", function (e) {
     taskElem.setAttribute("class", "task"); //class set to task coz all li in html have class task;
     //text of li is ipbox.val i.e in task var
     taskElem.innerText = task;
+    taskArr.push(task);
+    let StrArr = JSON.stringify(taskArr); //conv to str
+    localStorage.setItem("allTasks",StrArr); //setItem key:value 
     //element append
     taskList.appendChild(taskElem);
     inputBox.value = ""; //reset
